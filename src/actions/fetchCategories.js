@@ -1,19 +1,19 @@
 import {
   fetchProductsPending,
-  fetchProductsSuccess,
+  fetchCategories,
   fetchProductsError,
 } from './index';
 
-function fetchMeals(term) {
+function getCategories() {
   return dispatch => {
     dispatch(fetchProductsPending());
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${term}`)
+    fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
       .then(res => res.json())
       .then(res => {
         if (res.error) {
           throw (res.error);
         }
-        dispatch(fetchProductsSuccess(res.meals));
+        dispatch(fetchCategories(res.categories));
       })
       .catch(error => {
         dispatch(fetchProductsError(error));
@@ -21,4 +21,4 @@ function fetchMeals(term) {
   };
 }
 
-export default fetchMeals;
+export default getCategories;

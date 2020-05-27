@@ -1,8 +1,16 @@
 import React from 'react';
-import Selector from '../containers/Selector'
+import { Route, Switch } from 'react-router-dom';
+import MealsList from '../containers/MealsList';
+import MealDetails from '../containers/MealDetails';
+import AllCategories from './AllCategories';
 
 const App = () => (
-  <Selector />
+  <Switch>
+    <Route path="/" component={AllCategories} exact />
+    <Route path="/category/:category" component={MealsList} />
+    <Route path="/meal/:id" component={MealDetails} />
+  </Switch>
 );
+
 
 export default App;

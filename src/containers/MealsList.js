@@ -1,17 +1,22 @@
 import React, { useEffect } from 'react';
+import './list.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import MealPreview from '../components/MealPreview';
 import CategoryFilter from '../components/CategoryFilter';
 import fetchAllMeals from '../actions/fetchAll';
 import fetchMeal from '../actions/fetchSingle';
 import { getProductsError, getProducts, getProductsPending } from '../reducers/allMeals';
-import { UPDATE_CATEGORY, SELECT_MEAL } from '../actions/index';
+import { UPDATE_CATEGORY } from '../actions/index';
 
 const MealsList = props => {
+  console.log(props);
   const {
-    products, error, pending, category, fetchAllMeals, addFilter, select, fetchMeal,
+    products, error, pending, fetchAllMeals, addFilter, match, fetchMeal, current
   } = props;
+
+  const { category } = match.params;
 
   const handleFilterChange = evt => {
     const newCategory = evt.target.value;
@@ -20,12 +25,12 @@ const MealsList = props => {
   };
   const handleSelect = id => {
     fetchMeal(id);
-    select(true);
   };
 
   useEffect(() => {
     fetchAllMeals(category);
   }, []);
+
   const shouldComponentRender = () => {
     if (pending === true || products.length === 0) return false;
     return true;
@@ -37,22 +42,24 @@ const MealsList = props => {
       {error && <span className="product-list-error">error</span>}
       <h1>
         {' '}
-        {category}
+        {current}
         {' '}
       </h1>
-      <CategoryFilter onChange={handleFilterChange} value={category} />
+      <CategoryFilter onChange={handleFilterChange} value={current} />
       {products.map(el => (
-        <MealPreview
-          onClick={handleSelect}
-          key={el.idMeal}
-          src={el.strMealThumb}
-          name={el.strMeal}
-          id={el.idMeal}
-        />
+        <Link to={`/meal/${el.id}`} key={el.id}>
+          <MealPreview
+            onClick={handleSelect}
+            src={el.strMealThumb}
+            name={el.strMeal}
+            id={el.idMeal}
+          />
+        </Link>
       ))}
     </div>
   );
 };
+
 
 MealsList.propTypes = {
   pending: PropTypes.bool.isRequired,
@@ -71,7 +78,7 @@ const mapStateToProps = state => {
       error: getProductsError(allMeals),
       products: getProducts(allMeals),
       pending: getProductsPending(allMeals),
-      category: allMeals.category,
+      current: allMeals.category,
     }
   );
 };
@@ -79,7 +86,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
   fetchAllMeals,
   addFilter: UPDATE_CATEGORY,
-  select: SELECT_MEAL,
   fetchMeal,
 };
 

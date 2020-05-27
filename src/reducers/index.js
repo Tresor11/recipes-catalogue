@@ -2,13 +2,13 @@ import { combineReducers, applyMiddleware, createStore } from 'redux';
 
 import thunk from 'redux-thunk';
 import { allMealsReducer } from './allMeals';
-import selectReducer from './selectMeal';
 import { singleMealReducer } from './singleMeal';
+import { categoriesReducer } from './categories';
 
 const finalReducer = combineReducers({
   allMeals: allMealsReducer,
   singleMeal: singleMealReducer,
-  selected: selectReducer,
+  categories: categoriesReducer,
 });
 
 const middlewares = [thunk];

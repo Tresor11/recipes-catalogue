@@ -1,33 +1,28 @@
+// reducer.js
 const initialState = {
   pending: false,
-  products: [],
+  categories: [],
   error: null,
-  category: 'Chicken',
 };
 
-export const allMealsReducer = (state = initialState, action) => {
+export const categoriesReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'FETCH_PRODUCTS_PENDING':
       return {
         ...state,
         pending: true,
       };
-    case 'FETCH_PRODUCTS_SUCCESS':
+    case 'FETCH_CATEGORIES_SUCCESS':
       return {
         ...state,
         pending: false,
-        products: action.products,
+        categories: action.categories,
       };
     case 'FETCH_PRODUCTS_ERROR':
       return {
         ...state,
         pending: false,
         error: action.error,
-      };
-    case 'UPDATE_CATEGORY':
-      return {
-        ...state,
-        category: action.category,
       };
     case 'RESET':
       return initialState;

@@ -1,10 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
-import { getImg, getArea } from '../reducers/singleMeal';
+import fetchMeal from '../actions/fetchSingle';
+import { getImg, getArea, getIntructions } from '../reducers/singleMeal';
 
 const MealDetails = props => {
-  const { img, area } = props;
+  const { img, area, intructions } = props;
+  console.log(intructions);
   return (
     <div>
       <h1>{area}</h1>
@@ -19,8 +22,13 @@ const mapStateToProps = state => {
     {
       img: getImg(singleMeal.details),
       area: getArea(singleMeal.details),
+      intructions: getIntructions(singleMeal.details),
     }
   );
+};
+
+const mapDispatchToProps = {
+  fetchMeal,
 };
 
 MealDetails.propTypes = {
@@ -28,6 +36,6 @@ MealDetails.propTypes = {
   area: PropTypes.string.isRequired,
 };
 
-export default connect(
-  mapStateToProps,
-)(MealDetails);
+export default withRouter(connect(
+  mapStateToProps, mapDispatchToProps,
+)(MealDetails));

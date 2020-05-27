@@ -16,20 +16,24 @@ const UPDATE_CATEGORY = category => ({
   category,
 });
 
-const SELECT_MEAL = bool => ({
-  type: 'MEAL_SELECTED',
-  selected: bool,
-});
 const fetchSingleMeal = details => ({
   type: 'FETCH_MEAL_SUCCESS',
   details,
 });
+
+const fetchCategories = categories => ({
+  type: 'FETCH_CATEGORIES_SUCCESS',
+  categories,
+});
+
+const resetSelected = () => ({ type: 'RESET' });
 
 export {
   fetchProductsError,
   fetchProductsPending,
   fetchProductsSuccess,
   UPDATE_CATEGORY,
-  SELECT_MEAL,
   fetchSingleMeal,
+  resetSelected,
+  fetchCategories,
 };

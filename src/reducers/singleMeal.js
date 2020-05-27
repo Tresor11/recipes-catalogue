@@ -23,6 +23,8 @@ const singleMealReducer = (state = initialState, action) => {
         pending: false,
         error: action.error,
       };
+    case 'RESET':
+      return initialState;
     default:
       return state;
   }
@@ -30,5 +32,8 @@ const singleMealReducer = (state = initialState, action) => {
 
 const getImg = state => `${state.strMealThumb}/preview`;
 const getArea = state => state.strArea;
+const getIntructions = state => state.strInstructions;
 
-export { singleMealReducer, getImg, getArea };
+export {
+  singleMealReducer, getImg, getArea, getIntructions,
+};
