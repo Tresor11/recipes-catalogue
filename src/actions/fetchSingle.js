@@ -1,6 +1,6 @@
 import {
   fetchProductsPending,
-  fetchProductsSuccess,
+  fetchSingleMeal,
   fetchProductsError,
 } from './index';
 
@@ -13,8 +13,7 @@ function fetchMeal(id) {
         if (res.error) {
           throw (res.error);
         }
-        dispatch(fetchProductsSuccess(res));
-        console.log(res);
+        dispatch(fetchSingleMeal(res.meals[0]));
         return res;
       })
       .catch(error => {
@@ -22,3 +21,5 @@ function fetchMeal(id) {
       });
   };
 }
+
+export default fetchMeal;

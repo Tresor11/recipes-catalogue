@@ -1,8 +1,8 @@
 import React from 'react';
-import MealsList from './MealsList';
+import Selector from '../containers/Selector'
 
 const App = () => (
-  <MealsList />
+  <Selector />
 );
 
 export default App;

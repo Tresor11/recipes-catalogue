@@ -4,10 +4,10 @@ import {
   fetchProductsError,
 } from './index';
 
-function fetchProducts() {
+function fetchAllMeals(term) {
   return dispatch => {
     dispatch(fetchProductsPending());
-    fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${term}`)
       .then(res => res.json())
       .then(res => {
         if (res.error) {
@@ -21,4 +21,4 @@ function fetchProducts() {
   };
 }
 
-export default fetchProducts;
+export default fetchAllMeals;

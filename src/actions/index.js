@@ -1,23 +1,35 @@
-export const FETCH_PRODUCTS_PENDING = 'FETCH_PRODUCTS_PENDING';
-export const FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS';
-export const FETCH_PRODUCTS_ERROR = 'FETCH_PRODUCTS_ERROR';
+const fetchProductsPending = () => ({
+  type: 'FETCH_PRODUCTS_PENDING',
+});
 
-export function fetchProductsPending() {
-  return {
-    type: FETCH_PRODUCTS_PENDING,
-  };
-}
+const fetchProductsSuccess = products => ({
+  type: 'FETCH_PRODUCTS_SUCCESS',
+  products,
+});
 
-export function fetchProductsSuccess(products) {
-  return {
-    type: FETCH_PRODUCTS_SUCCESS,
-    products,
-  };
-}
+const fetchProductsError = error => ({
+  type: 'FETCH_PRODUCTS_ERROR',
+  error,
+});
+const UPDATE_CATEGORY = category => ({
+  type: 'UPDATE_CATEGORY',
+  category,
+});
 
-export function fetchProductsError(error) {
-  return {
-    type: FETCH_PRODUCTS_ERROR,
-    error,
-  };
-}
+const SELECT_MEAL = bool => ({
+  type: 'MEAL_SELECTED',
+  selected: bool,
+});
+const fetchSingleMeal = details => ({
+  type: 'FETCH_MEAL_SUCCESS',
+  details,
+});
+
+export {
+  fetchProductsError,
+  fetchProductsPending,
+  fetchProductsSuccess,
+  UPDATE_CATEGORY,
+  SELECT_MEAL,
+  fetchSingleMeal,
+};
