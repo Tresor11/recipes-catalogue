@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import MealPreview from '../components/MealPreview';
 import CategoryFilter from '../components/CategoryFilter';
 import fetchAllMeals from '../actions/fetchAll';
@@ -9,21 +10,21 @@ import { UPDATE_CATEGORY, SELECT_MEAL } from '../actions/index';
 
 const MealsList = props => {
   const {
-    products, error, pending, category, fetchProducts, addFilter, select, fetchSingle,
+    products, error, pending, category, fetchAllMeals, addFilter, select, fetchMeal,
   } = props;
 
   const handleFilterChange = evt => {
     const newCategory = evt.target.value;
     addFilter(evt.target.value);
-    fetchProducts(newCategory);
+    fetchAllMeals(newCategory);
   };
   const handleSelect = id => {
-    fetchSingle(id);
+    fetchMeal(id);
     select(true);
   };
 
   useEffect(() => {
-    fetchProducts(category);
+    fetchAllMeals(category);
   }, []);
   const shouldComponentRender = () => {
     if (pending === true || products.length === 0) return false;
@@ -53,6 +54,16 @@ const MealsList = props => {
   );
 };
 
+MealsList.propTypes = {
+  pending: PropTypes.bool.isRequired,
+  select: PropTypes.func.isRequired,
+  error: PropTypes.string,
+  category: PropTypes.string.isRequired,
+  fetchAllMeals: PropTypes.func.isRequired,
+  fetchMeal: PropTypes.func.isRequired,
+  addFilter: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = state => {
   const { allMeals } = state;
   return (
@@ -66,10 +77,10 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  fetchProducts: fetchAllMeals,
+  fetchAllMeals,
   addFilter: UPDATE_CATEGORY,
   select: SELECT_MEAL,
-  fetchSingle: fetchMeal,
+  fetchMeal,
 };
 
 

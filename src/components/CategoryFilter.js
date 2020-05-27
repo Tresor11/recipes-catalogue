@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CategoryFilter = ({ onChange,value }) => {
+const CategoryFilter = ({ onChange, value }) => {
   const categories = ['Beef', 'Chicken', 'Dessert', 'Lamb', 'Miscellaneous', 'Pasta', 'Pork', 'Seafood', 'Side', 'Starter', 'Vegan', 'Vegetarian', 'Breakfast', 'Goat'];
   return (
     <div className="filter">
@@ -16,6 +16,7 @@ const CategoryFilter = ({ onChange,value }) => {
 
 CategoryFilter.propTypes = {
   onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 export default CategoryFilter;
