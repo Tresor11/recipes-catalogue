@@ -1,7 +1,7 @@
 const initialState = {
   pending: false,
   categories: [],
-  error: null,
+  error: undefined,
 };
 
 export const categoriesReducer = (state = initialState, action) => {
@@ -23,8 +23,6 @@ export const categoriesReducer = (state = initialState, action) => {
         pending: false,
         error: action.error,
       };
-    case 'RESET':
-      return initialState;
     default:
       return state;
   }

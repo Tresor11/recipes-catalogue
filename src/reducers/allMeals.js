@@ -1,8 +1,8 @@
 const initialState = {
   pending: false,
   products: [],
-  error: null,
-  category: null,
+  error: undefined,
+  category: undefined,
 };
 
  const allMealsReducer = (state = initialState, action) => {
@@ -29,8 +29,6 @@ const initialState = {
         ...state,
         category: action.category,
       };
-    case 'RESET':
-      return initialState;
     default:
       return state;
   }

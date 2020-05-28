@@ -6,7 +6,7 @@ const Category = ({
   src, name, description,
 }) => (
 
-  <div className="category">
+  <div className="category shadow">
     <img className="bg-img" src={src} alt={description} />
     <h1 className="top-text">{name}</h1>
   </div>

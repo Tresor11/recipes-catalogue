@@ -1,5 +1,3 @@
-import { string } from 'prop-types';
-
 export const getProducts = state => state.products;
 export const getProductsPending = state => state.pending;
 export const getProductsError = state => state.error;
@@ -13,7 +11,6 @@ export const categoryDetails = category => category.strCategoryDescription;
 export const categoryImage = category => category.strCategoryThumb;
 
 export const getIngredient = meal => {
-  // console.log(meal);
   const result = [];
   for (let i = 1; i <= 20; i++) {
     if (meal[`strIngredient${i}`] === '') {

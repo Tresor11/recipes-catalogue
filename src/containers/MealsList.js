@@ -1,33 +1,31 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import PropTypes, { array } from 'prop-types';
 import { Link } from 'react-router-dom';
 import MealPreview from '../components/MealPreview';
-import CategoryFilter from '../components/CategoryFilter';
 import fetchAllMeals from '../actions/fetchAll';
 import fetchMeal from '../actions/fetchSingle';
 import { getProductsError, getProducts, getProductsPending } from '../helper/index';
 import { UPDATE_CATEGORY } from '../actions/index';
-import Category from '../components/CategoryPreview';
+import Spiner from '../components/Spiner';
 
 const MealsList = props => {
   const {
-    products, error, pending, fetchAllMeals, addFilter, fetchMeal, current, category
+    products, pending, fetchAllMeals, category,
   } = props;
 
   useEffect(() => {
     fetchAllMeals(category);
-  }, []);
+  }, [category, fetchAllMeals]);
 
   const shouldComponentRender = () => {
     if (pending === true || products.length === 0) return false;
     return true;
   };
 
-  if (!shouldComponentRender()) { return <h1> loading...</h1>; }
+  if (!shouldComponentRender()) { return <Spiner />; }
   return (
     <div>
-      {error && <span className="product-list-error">error</span>}
       <div className="container">
         {products.map(el => (
           <Link to={`/meal/${el.idMeal}`} key={el.id}>
@@ -46,11 +44,9 @@ const MealsList = props => {
 
 MealsList.propTypes = {
   pending: PropTypes.bool.isRequired,
-  error: PropTypes.string,
   category: PropTypes.string.isRequired,
   fetchAllMeals: PropTypes.func.isRequired,
-  fetchMeal: PropTypes.func.isRequired,
-  addFilter: PropTypes.func.isRequired,
+  products: PropTypes.instanceOf(array).isRequired,
 };
 
 const mapStateToProps = state => {

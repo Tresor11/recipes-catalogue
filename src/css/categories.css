@@ -12,6 +12,11 @@
     color: wheat;
 }
 
+.g-text{
+    color: rgb(146, 134, 62);
+    font-family: fantasy;
+}
+
 .d-flex{
     display: flex;
 }
@@ -36,6 +41,10 @@
     margin: 10px;
 }
 
+.p-10{
+    padding: 10px none;
+}
+
 .bg-green{
     background-color: green;
 }
@@ -48,6 +57,10 @@
 
 .text-b{
     font-weight: bolder;
+}
+
+.text-c{
+    text-align: center;
 }
 
 .flex-w{
@@ -64,4 +77,24 @@
 
 .w-100{
     width: 100vw;
+}
+
+.w-80{
+    max-width: 100px;
+}
+
+.shadow{
+    border: 1px solid #e8e8e8;
+    background-color: white;
+    -webkit-box-shadow: 0px 5px 9px 1px rgba(209,209,209,1);
+  -moz-box-shadow: 0px 5px 9px 1px rgba(209,209,209,1);
+  box-shadow: 0px 5px 9px 1px rgba(209,209,209,1);
+  transition: box-shadow 500ms,border 1s;
+}
+
+.shadow:hover{
+    border: 1px solid rgb(146, 134, 62) ;
+    -webkit-box-shadow: 0px 10px 13px 0px rgba(87,87,87,1);
+-moz-box-shadow: 0px 10px 13px 0px rgba(87,87,87,1);
+box-shadow: 0px 10px 13px 0px rgba(87,87,87,1);
 }

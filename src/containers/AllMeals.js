@@ -1,18 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import MealPreview from '../components/MealPreview';
+import PropTypes, { object } from 'prop-types';
 import CategoryFilter from '../components/CategoryFilter';
 import fetchAllMeals from '../actions/fetchAll';
-import fetchMeal from '../actions/fetchSingle';
-import { getProductsError, getProducts, getProductsPending } from '../helper/index';
+import { getProductsPending } from '../helper/index';
 import { UPDATE_CATEGORY } from '../actions/index';
-import Category from '../components/CategoryPreview';
 import MealsList from './MealsList';
 
 const AllMeals = props => {
-  console.log(props);
   const {
     addFilter, match, current, fetchAllMeals,
   } = props;
@@ -43,15 +38,25 @@ const AllMeals = props => {
           </h1>
         </span>
       </div>
+      <h1 className="text-c g-text">
+        {' '}
+        Available Meals For
+        {' '}
+        <br />
+        {current || category}
+      </h1>
       <MealsList category={category} />
     </div>
   );
 };
 
 
-MealsList.propTypes = {
+AllMeals.propTypes = {
   category: PropTypes.string.isRequired,
   addFilter: PropTypes.func.isRequired,
+  fetchAllMeals: PropTypes.func.isRequired,
+  current: PropTypes.string.isRequired,
+  match: PropTypes.instanceOf(object).isRequired,
 };
 
 const mapStateToProps = state => {

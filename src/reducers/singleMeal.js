@@ -1,7 +1,7 @@
 const initialState = {
   pending: false,
   details: {},
-  error: null,
+  error: undefined,
 };
 
 const singleMealReducer = (state = initialState, action) => {

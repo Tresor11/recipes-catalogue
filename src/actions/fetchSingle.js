@@ -14,7 +14,6 @@ function fetchMeal(id) {
           throw (res.error);
         }
         dispatch(fetchSingleMeal(res.meals[0]));
-        console.log(res);
         return res;
       })
       .catch(error => {

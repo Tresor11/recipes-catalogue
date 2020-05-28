@@ -8,7 +8,7 @@ const Meal = ({
   src, name,
 }) => (
 
-  <div className="meal-preview">
+  <div className="meal-preview shadow">
     <img className="bg-img" src={src} alt={name} />
     <h1 className="top-text">{name}</h1>
   </div>
