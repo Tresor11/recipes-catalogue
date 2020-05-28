@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import AllMeals from '../containers/AllMeals';
-import MealDetails from '../containers/MealDetails';
+import AllMeals from '../containers/AllRecipes';
+import MealDetails from '../containers/RecipeDetails';
 import NavBar from './Nav';
 import AllCategories from '../containers/AllCategories';
 

@@ -4,6 +4,8 @@ import PropTypes, { object, array } from 'prop-types';
 import { Link } from 'react-router-dom';
 import fetchMeal from '../actions/fetchSingle';
 import Spiner from '../components/Spiner';
+import ReciperImgage from '../components/RecipeImage';
+import RecipeDescription from '../components/RecipeDescription';
 import { resetSelected } from '../actions/index';
 import {
   getImg, getArea, getIntructions, getIngredient, getName, categoryName, getProductsPending,
@@ -12,7 +14,7 @@ import {
 
 const MealDetails = props => {
   const {
-    img, area, ingredients, match, fetchMeal, name, category, pending, resetSelected
+    img, area, ingredients, match, fetchMeal, name, category, pending, resetSelected,
   } = props;
   const { id } = match.params;
   useEffect(() => {
@@ -31,44 +33,15 @@ const MealDetails = props => {
   return (
     <div className="h-80 w-70 w-100 d-flex">
       <div className=" d-flex jutify-a recip w-100">
-        <div className="recip-img m-20 w-50">
-          <img className="bg-img" src={img} alt={area} />
-          <h1 className="top-text">{name}</h1>
-        </div>
+        <ReciperImgage className="recip-img m-20 w-50 shadow" src={img} name={name} />
         <div className="w-50">
-          <p className="text-b p-10">
-            <span className="m-10">
-              Category :
-            </span>
-            <span className="m-10 shadow ingredient">
-              {category}
-            </span>
-          </p>
-          <hr />
-          <p className="text-b p-10">
-            <span className="m-10">
-              Area :
-            </span>
-            <span className="m-10 shadow ingredient">
-              {area}
-            </span>
-          </p>
-          <hr />
-          <div className="d-flex flex-w">
-            <p className="text-b">
-              ingredients:
-            </p>
-            {ingredients.map(el => <span className="m-10 shadow ingredient" key={el}>{el}</span>)}
-          </div>
-          <hr />
-          <div>
-            <Link to="/">
-              <button type="button" onClick={resetSelected} className="shadow btn">Home</button>
-            </Link>
-            <Link to={`/category/${category}`}>
-              <button type="button" onClick={resetSelected} className="shadow btn">Previous</button>
-            </Link>
-          </div>
+          <RecipeDescription category={category} className="w-100" area={area} ingredients={ingredients} />
+          <Link to="/">
+            <button type="button" onClick={resetSelected} className="shadow btn">Home</button>
+          </Link>
+          <Link to={`/category/${category}`}>
+            <button type="button" onClick={resetSelected} className="shadow btn">Previous</button>
+          </Link>
         </div>
       </div>
     </div>

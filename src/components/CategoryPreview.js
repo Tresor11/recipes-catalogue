@@ -1,20 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReciperImgage from './RecipeImage';
 import '../css/category.css';
 
 const Category = ({
-  src, name, description,
+  src, name,
 }) => (
-
-  <div className="category shadow">
-    <img className="bg-img" src={src} alt={description} />
-    <h1 className="top-text">{name}</h1>
-  </div>
+  <ReciperImgage className="category shadow" src={src} name={name} />
 );
 
 Category.propTypes = {
   src: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
 };
 export default Category;

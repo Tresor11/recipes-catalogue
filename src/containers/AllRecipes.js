@@ -5,7 +5,7 @@ import CategoryFilter from '../components/CategoryFilter';
 import fetchAllMeals from '../actions/fetchAll';
 import { getProductsPending } from '../helper/index';
 import { UPDATE_CATEGORY } from '../actions/index';
-import MealsList from './MealsList';
+import MealsList from './RecipesList';
 
 const AllMeals = props => {
   const {
