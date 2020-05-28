@@ -2,17 +2,21 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import getCategories from '../actions/fetchCategories';
-import { getProductsError, getProducts, getProductsPending } from '../reducers/allMeals';
-import { categoriesReducer } from '../reducers/categories';
+import Category from '../components/CategoryPreview';
+import '../css/categories.css';
+import {
+  getProductsError, getProductsPending, getCategoriesList, categoryName, categoryDetails, categoryImage,
+} from '../helper/index';
 
 const AllCategories = props => {
   const { getCategories, categories } = props;
   useEffect(() => {
     getCategories();
   }, []);
-  console.log(props);
   return (
-    categories.map(el => <Link key={el.strCategory} to={`/category/${el.strCategory}`}><li>{el.strCategory}</li></Link>)
+    <div className="container">
+      {categories.map(el => <Link key={el.strCategory} to={`/category/${el.strCategory}`}><Category name={categoryName(el)} description={categoryDetails(el)} src={categoryImage(el)} /></Link>)}
+    </div>
   );
 };
 
@@ -25,7 +29,7 @@ const mapStateToProps = state => {
   return (
     {
       error: getProductsError(categories),
-      categories: categories.categories,
+      categories: getCategoriesList(categories),
       pending: getProductsPending(categories),
     }
   );

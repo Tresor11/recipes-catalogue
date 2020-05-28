@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+.category{
+    width: 30vw;
+    position: relative;
+    border: 1px solid;
+    margin: 10px;
+}
+
+.bg-img{
+width: 100%;
+height: 100%;
+}
+
+.top-text{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.486);
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    padding: 10px 0;
+    z-index: 10;
+}
+
+a{
+    text-decoration: none;
+}

@@ -2,10 +2,10 @@ const initialState = {
   pending: false,
   products: [],
   error: null,
-  category: 'Chicken',
+  category: null,
 };
 
-export const allMealsReducer = (state = initialState, action) => {
+ const allMealsReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'FETCH_PRODUCTS_PENDING':
       return {
@@ -36,6 +36,4 @@ export const allMealsReducer = (state = initialState, action) => {
   }
 };
 
-export const getProducts = state => state.products;
-export const getProductsPending = state => state.pending;
-export const getProductsError = state => state.error;
+export default allMealsReducer;

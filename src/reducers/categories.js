@@ -1,4 +1,3 @@
-// reducer.js
 const initialState = {
   pending: false,
   categories: [],
@@ -31,6 +30,4 @@ export const categoriesReducer = (state = initialState, action) => {
   }
 };
 
-export const getProducts = state => state.products;
-export const getProductsPending = state => state.pending;
-export const getProductsError = state => state.error;
+export default categoriesReducer;

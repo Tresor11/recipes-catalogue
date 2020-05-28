@@ -1,9 +1,9 @@
 import { combineReducers, applyMiddleware, createStore } from 'redux';
 
 import thunk from 'redux-thunk';
-import { allMealsReducer } from './allMeals';
-import { singleMealReducer } from './singleMeal';
-import { categoriesReducer } from './categories';
+import allMealsReducer from './allMeals';
+import singleMealReducer from './singleMeal';
+import categoriesReducer from './categories';
 
 const finalReducer = combineReducers({
   allMeals: allMealsReducer,

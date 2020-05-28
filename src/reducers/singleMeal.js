@@ -30,10 +30,5 @@ const singleMealReducer = (state = initialState, action) => {
   }
 };
 
-const getImg = state => `${state.strMealThumb}/preview`;
-const getArea = state => state.strArea;
-const getIntructions = state => state.strInstructions;
 
-export {
-  singleMealReducer, getImg, getArea, getIntructions,
-};
+export default singleMealReducer;
