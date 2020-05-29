@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes, { object } from 'prop-types';
+import PropTypes from 'prop-types';
 import CategoryFilter from '../components/CategoryFilter';
 import fetchAllMeals from '../actions/fetchAll';
 import { getProductsPending } from '../helper/index';
