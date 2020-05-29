@@ -1,4 +1,4 @@
-# Recipmatic ![screenshot](./lamp.png)
+# Recipmatic ![screenshot](./lamb.png)
 
 ### This project is a single page application built with react and redux 
 
