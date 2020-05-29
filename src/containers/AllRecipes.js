@@ -56,7 +56,7 @@ AllMeals.propTypes = {
   addFilter: PropTypes.func.isRequired,
   fetchAllMeals: PropTypes.func.isRequired,
   current: PropTypes.string.isRequired,
-  match: PropTypes.instanceOf(object).isRequired,
+  match: PropTypes.objectOf().isRequired,
 };
 
 const mapStateToProps = state => {

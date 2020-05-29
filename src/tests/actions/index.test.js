@@ -1,9 +1,6 @@
 import {
-  fetchProductsPending,
-  fetchProductsSuccess,
   UPDATE_CATEGORY,
   fetchSingleMeal,
-  resetSelected,
 } from '../../actions/index';
 
 describe('update categpry', () => {

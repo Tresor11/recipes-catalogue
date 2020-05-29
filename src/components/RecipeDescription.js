@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const RecipeDescription = ({
-  category, area, ingredients,className
+  category, area, ingredients, className,
 }) => (
   <div className={className}>
     <p className="text-b p-10">
@@ -31,5 +32,16 @@ const RecipeDescription = ({
     <hr />
   </div>
 );
+
+RecipeDescription.defaultProps = {
+  className: 'w-50',
+};
+
+RecipeDescription.propTypes = {
+  category: PropTypes.string.isRequired,
+  area: PropTypes.string.isRequired,
+  ingredients: PropTypes.arrayOf().isRequired,
+  className: PropTypes.string,
+};
 
 export default RecipeDescription;

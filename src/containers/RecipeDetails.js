@@ -78,6 +78,7 @@ MealDetails.propTypes = {
   match: PropTypes.instanceOf(object).isRequired,
   name: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
+  resetSelected: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MealDetails);

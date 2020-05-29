@@ -7,7 +7,7 @@ import ReciperImgage from '../../components/RecipeImage';
 
 Enzyme.configure({ adapter: new Adapter() });
 const setup = () => {
-  const component = shallow(<ReciperImgage />);
+  const component = shallow(<ReciperImgage src="jest" name="testing" />);
   return component;
 };
 

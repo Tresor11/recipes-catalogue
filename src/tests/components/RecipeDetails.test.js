@@ -18,7 +18,14 @@ const {
 
 Enzyme.configure({ adapter: new Adapter() });
 const setup = () => {
-  const component = shallow(<RecipeDescription ingredients={ingredients} className={className} />);
+  const component = shallow(
+    <RecipeDescription
+      ingredients={ingredients}
+      category={category}
+      area={area}
+      className={className}
+    />,
+  );
   return component;
 };
 

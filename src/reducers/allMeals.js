@@ -1,11 +1,11 @@
 const initialState = {
   pending: false,
   products: [],
-  error: undefined,
-  category: undefined,
+  error: '',
+  category: '',
 };
 
- const allMealsReducer = (state = initialState, action) => {
+const allMealsReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'FETCH_PRODUCTS_PENDING':
       return {

@@ -1,7 +1,7 @@
 const initialState = {
   pending: false,
   categories: [],
-  error: undefined,
+  error: '',
 };
 
 export const categoriesReducer = (state = initialState, action) => {

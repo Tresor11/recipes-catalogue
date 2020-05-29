@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import PropTypes, { array } from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import MealPreview from '../components/RecipePreview';
 import fetchAllMeals from '../actions/fetchAll';
@@ -19,7 +19,7 @@ const MealsList = props => {
   }, [category, fetchAllMeals]);
 
   const shouldComponentRender = () => {
-    if (pending === true || products.length === 0) return false;
+    if (category === undefined || pending === true) return false;
     return true;
   };
 
@@ -46,7 +46,7 @@ MealsList.propTypes = {
   pending: PropTypes.bool.isRequired,
   category: PropTypes.string.isRequired,
   fetchAllMeals: PropTypes.func.isRequired,
-  products: PropTypes.instanceOf(array).isRequired,
+  products: PropTypes.arrayOf.isRequired,
 };
 
 const mapStateToProps = state => {
