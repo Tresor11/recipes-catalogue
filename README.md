@@ -4,13 +4,19 @@
 
 #### The application is a recipes catalogue it uses TheMealDB Api to get the data and has three main pages
 
+<hr />
+
 > The home page is a list of the available categories from which you can select a specific category to see the differents recipes for that category.
 
 ![screenshot](./home.png)
 
+<hr />
+
 > The category page is a list of the differents recipes within a specific category from which you can select a recipe to see the details it also have a category filter which allow you to easily filter the recipes.
 
 ![screenshot](./category.png)
+
+<hr />
 
 > The details page is the last and it  basically provide the details about a specific recipe.
 
