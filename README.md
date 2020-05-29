@@ -1,68 +1,91 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Recipmatic
 
-## Available Scripts
+### This project is a single page application built with react and redux 
 
-In the project directory, you can run:
+#### The application is a recipes catalogue it uses TheMealDB Api to get the data and has three main pages
 
-### `yarn start`
+> The home page is a list of the available categories from which you can select a specific category to see the differents recipes for that category.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![screenshot](./home.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+> The category page is a list of the differents recipes within a specific category from which you can select a recipe to see the details it also have a category filter which allow you to easily filter the recipes.
 
-### `yarn test`
+![screenshot](./category.png)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> The details page is the last and it  basically provide the details about a specific recipe.
 
-### `yarn build`
+![screenshot](./details.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Built With
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- javaScript
+- React
+- TheMealDB
+- Redux
+- Node js
+- Heroku
 
-### `yarn eject`
+## Live Demo
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[Live Demo Link](https://recipes-catalogue.herokuapp.com/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Here are the steps to follow in order to get this project on your local computer.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Prerequisites
 
-## Learn More
+`node v12.16.3 +`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`npm v6.14.4 +`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Setup
 
-### Code Splitting
+clone this repo by typing `git clone`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Install
 
-### Analyzing the Bundle Size
+install the dependacies by typing `npm install`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### Usage
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+start the local server by running `npm start`
 
 ### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+this project is deployed on heroku
 
-### `yarn build` fails to minify
+to get the deployment build of the code run `npm run build`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Testing
+
+this project uses jest from testing , to run the tests type `npm test` 
+
+## Authors
+
+👤 **Tresor bireke**
+
+- Github: [@Tresor11](https://github.com/Tresor11)
+- Twitter: [@Tbireke](https://twitter.com/Tbireke)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
+
