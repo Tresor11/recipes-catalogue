@@ -1,5 +1,4 @@
 import React from 'react';
-import '../css/spiner.css';
 
 const Spiner = () => (
   <div className="spin-container">

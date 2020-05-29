@@ -2,32 +2,28 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
+import { Provider } from 'react-redux';
 import Adapter from 'enzyme-adapter-react-16';
 import AllMeals from '../../containers/AllRecipes';
-
-const initial = {
-  category: 'test',
-  area: 'jest',
-  className: 'comp',
-};
+import store from '../../reducers/index';
 
 Enzyme.configure({ adapter: new Adapter() });
 const setup = () => {
-  const component = shallow(<AllMeals props={initial} />);
+  const component = shallow(<Provider store={store}><AllMeals /></Provider>);
   return component;
 };
 
-describe('Header Component', () => {
+describe('It should not visible When the app loads', () => {
   let component;
   beforeEach(() => {
     component = setup();
   });
 
-  it('should render two divs', () => {
-    expect(component.find('div').length).toBe(2);
+  it('should not render any header', () => {
+    expect(component.find('h1').length).toBe(0);
   });
 
-  it('should render 6 span element', () => {
-    expect(component.find('span').length).toBe(6);
+  it('should not render any span element', () => {
+    expect(component.find('span').length).toBe(0);
   });
 });

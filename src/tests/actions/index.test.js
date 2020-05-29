@@ -4,7 +4,7 @@ import {
   UPDATE_CATEGORY,
   fetchSingleMeal,
   resetSelected,
-} from '../actions/index';
+} from '../../actions/index';
 
 describe('update categpry', () => {
   it('should create an action to change category', () => {

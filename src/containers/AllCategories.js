@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import PropTypes, { object } from 'prop-types';
 import getCategories from '../actions/fetchCategories';
 import Category from '../components/CategoryPreview';
-import '../css/categories.css';
 import Spiner from '../components/Spiner';
 import {
   getProductsError,

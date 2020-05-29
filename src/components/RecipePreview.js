@@ -3,7 +3,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReciperImgage from './RecipeImage';
-import '../css/meal.css';
 
 const Meal = ({
   src, name,
