@@ -12,6 +12,8 @@ const initialState = {
 describe('update categpry', () => {
   it('should create an action to change category', () => {
     expect(allMealsReducer(initialState, { type: 'FETCH_PRODUCTS_PENDING' })).toEqual({ ...initialState, pending: true });
+  });
+  it('should create an action to update the products', () => {
     expect(allMealsReducer(initialState, { type: 'FETCH_PRODUCTS_SUCCESS', products: ['a', 'b'] })).toEqual({ ...initialState, pending: false, products: ['a', 'b'] });
   });
 });

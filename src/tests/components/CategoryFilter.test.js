@@ -7,7 +7,7 @@ import CategoryFilter from '../../components/CategoryFilter';
 
 Enzyme.configure({ adapter: new Adapter() });
 const setup = () => {
-  const component = shallow(<CategoryFilter />);
+  const component = shallow(<CategoryFilter value="test" onChange={() => 'testing with jest'} />);
   return component;
 };
 
