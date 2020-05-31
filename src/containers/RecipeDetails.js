@@ -14,10 +14,9 @@ import {
 
 const MealDetails = props => {
   const {
-    img, area, ingredients, match, fetchMeal, name, category, pending, resetSelected, key,
+    img, area, ingredients, match, fetchMeal, name, category, pending, resetSelected,
   } = props;
   const { id } = match.params;
-  console.log(key);
   useEffect(() => {
     fetchMeal(id);
   }, [fetchMeal, id]);

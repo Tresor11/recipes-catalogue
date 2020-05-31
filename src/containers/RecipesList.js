@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import PropTypes, { shape, any } from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import MealPreview from '../components/RecipePreview';
 import fetchAllMeals from '../actions/fetchAll';
@@ -33,7 +33,6 @@ const MealsList = props => {
               src={el.strMealThumb}
               name={el.strMeal}
               id={el.idMeal}
-              key="aaaa"
             />
           </Link>
         ))}
