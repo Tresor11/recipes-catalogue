@@ -50,13 +50,17 @@ const AllMeals = props => {
   );
 };
 
+AllMeals.defaultProps = {
+  category: 'Beef',
+};
+
 
 AllMeals.propTypes = {
-  category: PropTypes.string.isRequired,
+  category: PropTypes.string,
   addFilter: PropTypes.func.isRequired,
   fetchAllMeals: PropTypes.func.isRequired,
   current: PropTypes.string.isRequired,
-  match: PropTypes.objectOf().isRequired,
+  match: PropTypes.shape().isRequired,
 };
 
 const mapStateToProps = state => {

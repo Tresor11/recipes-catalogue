@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import PropTypes, { shape, any } from 'prop-types';
 import { Link } from 'react-router-dom';
 import MealPreview from '../components/RecipePreview';
 import fetchAllMeals from '../actions/fetchAll';
@@ -28,11 +28,12 @@ const MealsList = props => {
     <div>
       <div className="container">
         {products.map(el => (
-          <Link to={`/meal/${el.idMeal}`} key={el.id}>
+          <Link to={`/meal/${el.idMeal}`} key={Math.random() * 1000}>
             <MealPreview
               src={el.strMealThumb}
               name={el.strMeal}
               id={el.idMeal}
+              key="aaaa"
             />
           </Link>
         ))}
@@ -41,12 +42,15 @@ const MealsList = props => {
   );
 };
 
+MealsList.defaultProps = {
+  products: [''],
+};
 
 MealsList.propTypes = {
   pending: PropTypes.bool.isRequired,
   category: PropTypes.string.isRequired,
   fetchAllMeals: PropTypes.func.isRequired,
-  products: PropTypes.arrayOf.isRequired,
+  products: PropTypes.arrayOf(String),
 };
 
 const mapStateToProps = state => {

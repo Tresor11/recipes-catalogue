@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import PropTypes, { object, array } from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import fetchMeal from '../actions/fetchSingle';
 import Spiner from '../components/Spiner';
@@ -14,9 +14,10 @@ import {
 
 const MealDetails = props => {
   const {
-    img, area, ingredients, match, fetchMeal, name, category, pending, resetSelected,
+    img, area, ingredients, match, fetchMeal, name, category, pending, resetSelected, key,
   } = props;
   const { id } = match.params;
+  console.log(key);
   useEffect(() => {
     fetchMeal(id);
   }, [fetchMeal, id]);
@@ -69,15 +70,30 @@ const mapDispatchToProps = {
   resetSelected,
 };
 
+MealDetails.defaultProps = {
+  img: '',
+  pending: false,
+  name: '',
+  category: '',
+  area: '',
+  ingredients: [''],
+};
+
 MealDetails.propTypes = {
-  img: PropTypes.string.isRequired,
-  area: PropTypes.string.isRequired,
-  pending: PropTypes.bool.isRequired,
+  img: PropTypes.string,
+  area: PropTypes.string,
+  pending: PropTypes.bool,
   fetchMeal: PropTypes.func.isRequired,
-  ingredients: PropTypes.instanceOf(array).isRequired,
-  match: PropTypes.instanceOf(object).isRequired,
-  name: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
+  ingredients: PropTypes.arrayOf(String),
+  match: PropTypes.shape({
+    path: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  }).isRequired,
+  name: PropTypes.string,
+  category: PropTypes.string,
   resetSelected: PropTypes.func.isRequired,
 };
 
