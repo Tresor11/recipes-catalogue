@@ -34,7 +34,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://recipes-catalogue.herokuapp.com/)
+[Live Demo Link](https://determined-wilson-d7ccfc.netlify.app/)
 
 ## Getting Started
 
