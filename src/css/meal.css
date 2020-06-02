@@ -1,0 +1,44 @@
+.meal-preview{
+    width: 45vw;
+    margin: 10px;
+    position: relative;
+}
+
+.mp-image{
+    width: 100%;
+    height: auto;
+}
+
+.recip{
+    width: 40vw;
+}
+
+.recip-img{
+    position: relative;
+}
+
+.meal-name{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.486);
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: -5%;
+    padding: 20px 0;
+    z-index: 10;
+}
+
+.ingredient{
+    color: rgb(146, 134, 62);
+    padding: 10px;
+    text-align: center;
+    border-radius: 5%;
+}
+
+.btn{
+    padding: 20px;
+    margin: 10px;
+    color: rgb(78, 65, 31);
+    font-size: large;
+    font-weight: bolder;
+}
