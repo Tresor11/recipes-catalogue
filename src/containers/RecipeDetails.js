@@ -31,10 +31,10 @@ const MealDetails = props => {
   }
 
   return (
-    <div className="h-80 w-70 w-100 d-flex">
-      <div className=" d-flex jutify-a recip w-100">
-        <ReciperImgage className="recip-img m-20 w-50 shadow" src={img} name={name} />
-        <div className="w-50">
+    <div className="h-80 w-100 d-flex">
+      <div className="recip">
+        <ReciperImgage className="recip-img  m-20 w-50 shadow" src={img} name={name} />
+        <div className="desciption-div">
           <RecipeDescription category={category} className="w-100" area={area} ingredients={ingredients} />
           <Link to="/">
             <button type="button" onClick={resetSelected} className="shadow btn">Home</button>
