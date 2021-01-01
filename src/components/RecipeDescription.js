@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { showProcess } from '../helper/index';
 
 const RecipeDescription = ({
-  category, area, ingredients, className,
+  category, area, ingredients, className, process,
 }) => (
   <div className={className}>
     <p className="text-b p-10">
@@ -30,6 +31,13 @@ const RecipeDescription = ({
       {ingredients.map(el => <span className="m-10 shadow ingredient" key={Math.random() * 1000}>{el}</span>)}
     </div>
     <hr />
+    <div className="d-flex flex-w flex-c">
+      <button type="button" className="show-process" onClick={showProcess}>Cooking Process</button>
+      <div className="c-process">
+        {process}
+      </div>
+    </div>
+    <hr />
   </div>
 );
 
@@ -42,6 +50,7 @@ RecipeDescription.propTypes = {
   area: PropTypes.string.isRequired,
   ingredients: PropTypes.arrayOf(String).isRequired,
   className: PropTypes.string,
+  process: PropTypes.string.isRequired,
 };
 
 export default RecipeDescription;

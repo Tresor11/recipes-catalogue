@@ -14,7 +14,7 @@ import {
 
 const MealDetails = props => {
   const {
-    img, area, ingredients, match, fetchMeal, name, category, pending, resetSelected,
+    img, area, ingredients,instruction, match, fetchMeal, name, category, pending, resetSelected,
   } = props;
   const { id } = match.params;
   useEffect(() => {
@@ -23,6 +23,8 @@ const MealDetails = props => {
 
   const shouldComponentRender = () => {
     if (name === undefined || pending === true) return false;
+    console.log("Instruction here!!!");
+    console.log(instruction);
     return true;
   };
 
@@ -35,7 +37,7 @@ const MealDetails = props => {
       <div className=" d-flex jutify-a recip w-100">
         <ReciperImgage className="recip-img m-20 w-50 shadow" src={img} name={name} />
         <div className="w-50">
-          <RecipeDescription category={category} className="w-100" area={area} ingredients={ingredients} />
+          <RecipeDescription category={category} className="w-100" area={area} process={instruction} ingredients={ingredients} />
           <Link to="/">
             <button type="button" onClick={resetSelected} className="shadow btn">Home</button>
           </Link>
@@ -55,7 +57,7 @@ const mapStateToProps = state => {
     {
       img: getImg(details),
       area: getArea(details),
-      intructions: getIntructions(details),
+      instruction: getIntructions(details),
       ingredients: getIngredient(details),
       name: getName(details),
       category: categoryName(details),
