@@ -22,14 +22,14 @@ const AllMeals = props => {
 
   return (
     <div>
-      <div className="d-flex">
+      <div className="filter-container">
 
         <span className="w-50">
 
           <CategoryFilter onChange={handleFilterChange} value={current} />
         </span>
 
-        <span className="w-50 d-flex justify-c">
+        <span className="current">
           <h1 className="m-20"> Current:</h1>
           <h1>
             {' '}
