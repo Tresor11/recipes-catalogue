@@ -15,6 +15,29 @@
     width: 100%;
 }
 
+.show-process{
+    padding:10px;
+    margin: 10px;
+    border:none;
+    font-weight:bolder;
+    cursor: pointer;
+    background:rgb(146, 134, 62);
+}
+
+.show-process.active{
+    font-weight:bolder;
+    border:1px solid grey;
+    color: white;
+    background: grey;
+}
+
+.c-process{
+    text-align: center;
+    display:none;
+    font-family: fantasy;
+    line-height: 1.5;
+}
+
 .recip-img{
     position: relative;
 }
@@ -33,6 +56,7 @@
 .ingredient{
     color: rgb(146, 134, 62);
     padding: 10px;
+
     text-align: center;
     border-radius: 5%;
 }
