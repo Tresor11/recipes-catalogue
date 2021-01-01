@@ -12,6 +12,10 @@
     color: wheat;
 }
 
+.filter-container{
+    display: flex;
+}
+
 .g-text{
     color: rgb(146, 134, 62);
     font-family: fantasy;
@@ -87,6 +91,18 @@
     max-width: 100px;
 }
 
+.current{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.drop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .shadow{
     border: 1px solid #e8e8e8;
     background-color: white;
@@ -102,3 +118,18 @@
 -moz-box-shadow: 0px 10px 13px 0px rgba(87,87,87,1);
 box-shadow: 0px 10px 13px 0px rgba(87,87,87,1);
 }
+
+@media only screen and (max-width: 768px) {
+    /* For desktop: */
+    .filter-container{
+        display: block;
+    }
+    .current{
+        width: 100%;
+        border-bottom: 1px solid gray;
+        align-items: center;
+    }
+    h1{
+        font-size: 20px;
+    }
+  }
