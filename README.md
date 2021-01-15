@@ -2,7 +2,7 @@
 
 ### This project is a single page application built with react and redux 
 
-#### The application is a recipes catalogue it uses TheMealDB Api to get the data and has three main pages
+#### The application is a recipes catalogue it uses TheMealDB Api to get the data and has three main pages.
 
 <hr />
 
