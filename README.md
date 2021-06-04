@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9b76d356-8bdd-436a-a550-20ec16e7def0/deploy-status)](https://app.netlify.com/sites/recipes-catalogue/deploys)
 # Recipmatic ![screenshot](./lamb.png)
 
 ### This project is a single page application built with react and redux 
