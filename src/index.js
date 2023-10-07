@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './css/category.css';
 import './css/meal.css';
 import './css/categories.css';
@@ -11,7 +11,7 @@ import * as serviceWorker from './serviceWorker';
 import store from './reducers/index';
 
 
-ReactDOM.render(
+ReactDOM.createRoot(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
