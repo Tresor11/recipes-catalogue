@@ -31,7 +31,7 @@
 - TheMealDB
 - Redux
 - Node js
-- Heroku
+- Netlify
 
 ## Live Demo
 
