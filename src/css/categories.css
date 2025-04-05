@@ -25,6 +25,10 @@
     display: flex;
 }
 
+.flex-c{
+    justify-content:center;
+}
+
 .w-50{
     width: 50%;
 }

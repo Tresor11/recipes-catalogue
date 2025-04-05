@@ -2,20 +2,20 @@ import {
   fetchProductsPending,
   fetchProductsSuccess,
   fetchProductsError,
-} from './index';
+} from "./index";
 
 function fetchMeals(term) {
-  return dispatch => {
+  return (dispatch) => {
     dispatch(fetchProductsPending());
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${term}`)
-      .then(res => res.json())
-      .then(res => {
+      .then((res) => res.json())
+      .then((res) => {
         if (res.error) {
-          throw (res.error);
+          throw res.error;
         }
         dispatch(fetchProductsSuccess(res.meals));
       })
-      .catch(error => {
+      .catch((error) => {
         dispatch(fetchProductsError(error));
       });
   };
